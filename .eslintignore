@@ -1,0 +1,5 @@
+node_modules
+public
+.eslintrc.js
+tsconfig.json
+lint-staged.config.js

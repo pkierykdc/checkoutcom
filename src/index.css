@@ -1,3 +1,30 @@
+:root {
+  --text-color-primary: #384159;
+  
+  /* TextField */
+  --text-field-border-color-focus: #818286;
+  --text-field-background-color: #EFF1F5;
+  --text-field-border-radius: 5px;
+  --text-field-error-color: #8A2839;
+
+  /* Button */
+  --button-default-color: var(--text-color-primary);
+  --button-default-background-color: #EFF1F5;
+  --button-default-background-color-disabled: #EFF1F5;
+  --button-default-background-color-hover: #DFE0E2;
+  --button-default-border-color-focus: #818286;
+
+  --button-primary-color: #FFFFFF;
+  --button-primary-background-color: #3049AC;
+  --button-primary-background-color-disabled: #A5B1DA;
+  --button-primary-background-color-hover: #263B8B;
+  --button-primary-border-color-focus: #0033ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +32,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  color: var(--text-color-primary);
 }
