@@ -4,7 +4,6 @@ import { FaStar } from "react-icons/fa";
 interface StarProps {
   filled: boolean;
   onClick?: () => void;
-  onEnter?: () => void;
 }
 
 export function Star({ filled, onClick }: StarProps) {
@@ -13,7 +12,7 @@ export function Star({ filled, onClick }: StarProps) {
       color={filled ? "#ffa500" : "#d8d9dc"} 
       onClick={onClick} 
       size={25}
-      style={{ marginRight: 5, cursor: "pointer" }}
+      style={{ cursor: "pointer", marginRight: 5 }}
     />
   );
 }

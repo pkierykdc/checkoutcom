@@ -5,8 +5,6 @@ import { ErrorText } from "../";
 
 type TextFieldProps = FieldRenderProps<string, any>;
 
-// TODO: add pattern for mobile devices
-
 export const TextField: React.FC<TextFieldProps> = ({ input, meta, ...rest }) => (
   <Wrapper>
     <Input type="text" {...input} {...rest} aria-describedby="textFieldError" />

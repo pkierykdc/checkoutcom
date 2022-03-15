@@ -1,28 +1,40 @@
+import { FormApi } from "final-form";
 import React from "react";
 import { Field, Form } from "react-final-form";
+import { useMutation } from "react-query";
 import styled from "styled-components";
-import { Button, StarRating, TextArea, TextField } from "../";
+import { Button, StarRatingField, TextArea, TextField } from "../";
+import { queryClient } from "../../index";
+import { QueryKeys } from "../../services/queryKeys";
+import { addNewReview } from "../../services/reviews.service";
+import { Review } from "../../services/types";
 import { composeValidators, email, required } from "../../utils/form-validators";
 
-interface FormValues {
-  name: string;
-  email: string;
-  rating: number;
-  comment: string;
-}
+type FormValues = Omit<Review, "date">;
 
 export function ReviewForm() {
-  const onSubmit = (values: FormValues) => {
-    console.log(JSON.stringify(values, null, 2));
+  const mutation = useMutation(addNewReview, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(QueryKeys.REVIEWS);
+    }
+  });
+
+  const onSubmit = (values: FormValues, form: FormApi<Omit<Review, "date">, Omit<Review, "date">>) => {
+    mutation.mutate(values);
+    form.restart();
   };
 
   return (
     <Form
       onSubmit={onSubmit}
+      initialValues={{
+        name: "",
+        email: "",
+        rating: 0,
+        comment: ""
+      }}
       render={({ handleSubmit, submitting, pristine }) => (
         <form onSubmit={handleSubmit}>
-          <Headline>New review request</Headline>
-
           <FormLabel htmlFor="name">Customer name</FormLabel>
           <Field<string>
             name="name"
@@ -51,7 +63,7 @@ export function ReviewForm() {
             name="rating"
             id="rating"
             type="email"
-            component={StarRating}
+            component={StarRatingField}
             validate={required}
           />
 
@@ -71,12 +83,7 @@ export function ReviewForm() {
   );
 }
 
-const Headline = styled.h1`
-  margin-top: 0;
-  margin-bottom: 45px;
-`;
-
 const FormLabel = styled.label`
-display: inline-block;
+  display: inline-block;
   padding-bottom: 10px;
 `;

@@ -7,7 +7,6 @@ module.exports = {
       node: true // Defines things like process.env when generating through node
   },
   extends: [
-      "eslint:recommended",
       "plugin:react/recommended",
       "plugin:jsx-a11y/recommended",
       "plugin:react-hooks/recommended",
@@ -55,6 +54,7 @@ module.exports = {
           "never"
       ],
       "eol-last": "error",
+      "react/jsx-uses-vars": "error",
       "import/order": [
           "warn",
           {
@@ -116,7 +116,7 @@ module.exports = {
               ]
           }
       ],
-      "no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
       "object-curly-spacing": [
           "warn",
           "always"
