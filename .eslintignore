@@ -3,3 +3,6 @@ public
 .eslintrc.js
 tsconfig.json
 lint-staged.config.js
+coverage
+.storybook
+.husky
