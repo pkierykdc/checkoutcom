@@ -10,9 +10,9 @@ import {
 } from "chart.js";
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { shapeDataForChart } from "./Chart.utils";
 import { LoadingIndicator } from "../";
 import { Review } from "../../services/types";
+import { shapeDataForChart } from "../../utils/common";
 
 ChartJS.register(
   CategoryScale,

@@ -6,10 +6,10 @@ import { Star } from "./Star";
 import { ErrorText } from "..";
 import { KeyCodes } from "../../utils/consts";
 
-export type StarRatingFieldProps = FieldRenderProps<number, any>;
+export type StarRatingFieldProps = FieldRenderProps<number>;
 
 export function StarRatingField({ input, meta, ...rest }: StarRatingFieldProps) {
-  const ref = useRef<any>();
+  const ref = useRef<HTMLDivElement>(null);
   const [rating, setRating] = useState(input.value);
   const changeRating = useCallback((newRating: number) => {
     if (newRating >= 0 && newRating <= 5) {

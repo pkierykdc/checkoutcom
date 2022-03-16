@@ -11,6 +11,7 @@ export const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
       {
         [1, 2, 3, 4, 5].map((value) => (
           <FaStar 
+            data-testid={value <= rating ? "StarRatingComponentStarFilled" : "StarRatingComponentStarUnfilled"}
             key={value}
             color={value <= rating ? "#ffa500" : "#d8d9dc"}
             size={18}

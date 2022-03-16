@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from "react";
 import styled from "styled-components";
 import { Comment as CommentType } from "./Comments.types";

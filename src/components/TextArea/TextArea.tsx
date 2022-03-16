@@ -3,7 +3,7 @@ import { FieldRenderProps } from "react-final-form";
 import styled from "styled-components";
 import { ErrorText } from "../";
 
-export type TextAreaProps = FieldRenderProps<string, any>;
+export type TextAreaProps = FieldRenderProps<string>;
 
 export const TextArea: React.FC<TextAreaProps> = ({ input, meta, ...rest }) => (
   <Wrapper>
