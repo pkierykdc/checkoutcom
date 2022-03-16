@@ -9,6 +9,7 @@ export function LoadingIndicator() {
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 100 100"
       style={{ background: "none" }}
+      data-testid="LoadingIndicatorComponent"
     >
       <circle cx="75" cy="50" r="6.397" fill="#363a3c">
         <animate

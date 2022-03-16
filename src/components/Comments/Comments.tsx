@@ -5,7 +5,7 @@ import { Comment as CommentType } from "./Comments.types";
 import { LoadingIndicator } from "../";
 import { StarRating } from "../StarRating/StarRating";
 
-interface CommentsProps {
+export interface CommentsProps {
   comments?: CommentType[];
   isLoading: boolean;
 }
@@ -17,7 +17,7 @@ export const Comments: React.FC<CommentsProps> = ({ comments, isLoading }) => {
     <Wrapper>
       {/* INFO: here I use index as key because I don't want to mock unique IDs myself, I know it's anti-pattern */}
       {comments ? comments.map((comment, idx) => <Comment key={idx}>
-        <CommentName>{comment.name}</CommentName>
+        <CommentName data-testid="CommentName">{comment.name}</CommentName>
         <StarRating rating={comment.rating} />
         <CommentDescription>{comment.comment}</CommentDescription>
       </Comment>): <>No data.</>}

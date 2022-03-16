@@ -1,15 +1,13 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import styled from "styled-components";
-import { Comments, LoadingIndicator, ReviewForm } from "../components";
+import { Chart, Comments, ReviewForm } from "../components";
 import { QueryKeys } from "../services/queryKeys";
 import { getReviews } from "../services/reviews.service";
 
-const Chart = lazy(() => import("../components").then((module) => ({ default: module.Chart })));
-
 export default function App() {
   const { isLoading, data: reviewsData } = useQuery(QueryKeys.REVIEWS, getReviews);
-  
+
   return (
     <AppContainer>
       <ReviewSection>
@@ -18,9 +16,7 @@ export default function App() {
           <ReviewForm />
         </div>
         <div style={{ width: "50%" }}>
-          <Suspense fallback={<LoadingIndicator />}>
-            <Chart data={reviewsData} isLoading={isLoading} />
-          </Suspense>
+          <Chart data={reviewsData} isLoading={isLoading} />
         </div>
       </ReviewSection>
       <section>

@@ -1,10 +1,9 @@
 import { FormApi } from "final-form";
 import React from "react";
 import { Field, Form } from "react-final-form";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import styled from "styled-components";
 import { Button, StarRatingField, TextArea, TextField } from "../";
-import { queryClient } from "../../index";
 import { QueryKeys } from "../../services/queryKeys";
 import { addNewReview } from "../../services/reviews.service";
 import { Review } from "../../services/types";
@@ -13,6 +12,7 @@ import { composeValidators, email, required } from "../../utils/form-validators"
 type FormValues = Omit<Review, "date">;
 
 export function ReviewForm() {
+  const queryClient = useQueryClient();
   const mutation = useMutation(addNewReview, {
     onSuccess: () => {
       queryClient.invalidateQueries(QueryKeys.REVIEWS);

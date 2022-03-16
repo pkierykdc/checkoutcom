@@ -40,7 +40,7 @@ const options = {
 const labels = ["January", "February", "March", "April", "May", "June", "July", 
   "August", "September", "October", "November", "December"];
 
-interface ChartProps {
+export interface ChartProps {
   data?: Review[];
   isLoading: boolean;
 }

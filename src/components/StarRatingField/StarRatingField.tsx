@@ -6,7 +6,7 @@ import { Star } from "./Star";
 import { ErrorText } from "..";
 import { KeyCodes } from "../../utils/consts";
 
-type StarRatingFieldProps = FieldRenderProps<number, any>;
+export type StarRatingFieldProps = FieldRenderProps<number, any>;
 
 export function StarRatingField({ input, meta, ...rest }: StarRatingFieldProps) {
   const ref = useRef<any>();

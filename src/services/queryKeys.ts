@@ -1,3 +1,3 @@
-export enum QueryKeys {
-  REVIEWS = "reviews"
-}
+export const QueryKeys = Object.freeze({
+  REVIEWS: "reviews"
+});
