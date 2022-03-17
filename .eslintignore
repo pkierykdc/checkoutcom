@@ -6,3 +6,4 @@ lint-staged.config.js
 coverage
 .storybook
 .husky
+build
