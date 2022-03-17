@@ -159,15 +159,7 @@ module.exports = {
               ignoreMemberSort: false
           }
       ],
-      "sort-keys": [
-          "warn",
-          "asc",
-          {
-              caseSensitive: true,
-              minKeys: 2,
-              natural: false
-          }
-      ]
+      "sort-keys": "off"
   },
   settings: {
       react: {
