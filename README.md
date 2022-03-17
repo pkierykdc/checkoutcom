@@ -49,3 +49,6 @@ Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
 - React-use
 - ESLint
 
+## Workflows
+
+There is a CI/CD workflow configured that lints your project, check tests and publis it to this URL: [https://checkout-task-xyz.surge.sh/](https://checkout-task-xyz.surge.sh/).
